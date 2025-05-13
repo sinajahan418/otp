@@ -53,7 +53,7 @@ const LoginWithPassword = () => {
 
   return (
     <div className="w-full flex items-center justify-center h-screen">
-      <div className="w-[30%] bg-slate-300 shadow-2xl rounded-2xl p-4 flex flex-col items-center">
+      <div className="md:w-[40%] sm:w-[80%] w-full bg-slate-300 shadow-2xl rounded-2xl p-4 flex flex-col items-center">
         <div className="flex flex-col gap-5 items-center justify-center">
           <h3 className="text-2xl font-bold">ورود با رمز عبور</h3>
           <p className="text-sm text-gray-800">

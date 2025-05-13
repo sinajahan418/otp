@@ -74,7 +74,7 @@ const SignupForm = () => {
   return (
     <div className="w-full flex items-center justify-center h-screen">
       {!showRegesterInput && (
-        <form className="w-[30%] bg-slate-300 items-center justify-center  rounded-2xl p-6 shadow-xl flex flex-col gap-4">
+        <form className="md:w-[40%] sm:w-[80%] w-full bg-slate-300 items-center justify-center  rounded-2xl p-6 shadow-xl flex flex-col gap-4">
           <h2 className="text-xl font-bold text-center"> تایید شماره همراه</h2>
 
           <div className="flex w-full flex-col gap-1">
@@ -99,7 +99,7 @@ const SignupForm = () => {
       {showRegesterInput && (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-[30%] bg-slate-300  rounded-2xl p-6 shadow-xl flex flex-col gap-4"
+          className="md:w-[40%] sm:w-[80%] w-full bg-slate-300  rounded-2xl p-6 shadow-xl flex flex-col gap-4"
         >
           <h2 className="text-xl font-bold text-center">فرم ثبت‌نام</h2>
 
