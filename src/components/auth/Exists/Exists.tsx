@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { usePhoneStore } from "@/lib/store/phoneStore";
 import { ExsistResponse } from "@/lib/types/Exsist";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,6 +10,7 @@ import toast from "react-hot-toast";
 const Exists = () => {
   const [phonOrName, setPhonOrName] = useState("");
   const [loading, setLoading] = useState(false);
+  const {setUserName} = usePhoneStore();
 
   const router = useRouter();
 
@@ -47,9 +49,17 @@ const Exists = () => {
         };
       }
 
-      if (res.status === 200) {
+      if (result.data.exists) {
         toast.success("ورود موفقیت‌آمیز بود");
         router.push("/login-with-password");
+        setUserName(phonOrName)
+      }
+      if (!result.data.exists) {
+        toast.error(" شماره عتبر نیست");
+             return {
+          message: "مقدار صحیح نیست",
+          errors: result.errors || { username: [result.message] },
+        };
       }
 
       return result as ExsistResponse;
